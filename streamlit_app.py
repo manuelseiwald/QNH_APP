@@ -25,7 +25,7 @@ def get_metar(icao="LOWS"):
         return f"Fehler beim Abrufen des METAR: {e}"
 
 # Streamlit App
-st.title("QNH-Rechner – Großgmain")
+st.title("QNH-Rechner – Seiwi")
 
 # Höhe
 height = st.number_input("Höhe über Meer (m)", min_value=0, max_value=3000, value=550)
