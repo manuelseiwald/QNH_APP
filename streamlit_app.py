@@ -5,11 +5,11 @@ def qfe_to_qnh(qfe, temp_c, height_m):
     return qfe * (1 - (0.0065 * height_m) / t_kelvin) ** -5.255
 
 def standard_qfe(height_m, qnh=1013.25):
-    # Druckabnahme nach ICAO Standardatmosphäre
-    temp_kelvin = 288.15  # Standardtemperatur auf Meereshöhe
-    return qnh / (1 - (0.0065 * height_m) / temp_kelvin) ** 5.255
+    # Standardtemperatur auf Meereshöhe in Kelvin (15°C)
+    temp_kelvin = 288.15
+    return qnh * (1 - (0.0065 * height_m) / temp_kelvin) ** 5.255
 
-st.title("QNH-Rechner – Großgmain")
+st.title("QNH-Rechner – Großgmain (550m)")
 
 st.write("Berechnet den QNH aus QFE und Temperatur auf Ortshöhe. Zeigt auch den theoretischen Standard-QFE.")
 
